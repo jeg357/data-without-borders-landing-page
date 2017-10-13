@@ -37,6 +37,61 @@
 
 })(jQuery); // End of use strict
 
+
+$('#registerBtn').click(function(){
+  dataToBePosted = {
+    name:$('#name').val(),
+    email:$('#email').val(),
+    password:$('#password').val(),
+    username:$('#name').val(),
+    active: true,
+    approved: true
+  }
+user_fields = $('#user_field').text();
+if(user_fields === "Data Scientist"){
+  group = 42;
+} else {
+  group = 41;
+}
+
+$.each( [ "put", "delete" ], function( i, method ) {
+  $[ method ] = function( url, data, callback, type ) {
+    if ( $.isFunction( data ) ) {
+      type = type || callback;
+      callback = data;
+      data = undefined;
+    }
+
+    return $.ajax({
+      url: url,
+      type: method,
+      dataType: type,
+      data: data,
+      success: callback
+    });
+  };
+});
+
+
+
+$.post("http://discussion.datawithoutborders.org:4000"+"/users?api_key=b5a802f239160697786c69a642e70ddaa7eafb78446f8f6cbcc78b11a2ba8e34&api_username=eyvind"
+ , dataToBePosted, function(data, status){
+    if(status == "success"){
+      $.post("http://discussion.datawithoutborders.org:4000/admin/users/" + data.user_id +"/groups?api_key=b5a802f239160697786c69a642e70ddaa7eafb78446f8f6cbcc78b11a2ba8e34&api_username=eyvind"
+ , {"group_id": group}, function(data, status){
+    }).done(function(){
+      $(location).attr('href', 'http://discussion.datawithoutborders.org:4000');
+    });
+    }
+ });
+
+});
+
+$(".dropdown-item").click(function(){
+  $(this).parents(".dropdown").find('.btn').html($(this).text());
+  $(this).parents(".dropdown").find('.btn').val($(this).data("value"));
+});
+
 // Google Maps Scripts
 var map = null;
 // When the window has finished loading create our google map below
