@@ -49,6 +49,7 @@ gulp.task('minify-css', ['sass'], function() {
 gulp.task('minify-js', function() {
   return gulp.src('js/grayscale.js')
     .pipe(uglify())
+    .on('error', function (err) { console.log(err.toString()); })
     .pipe(header(banner, {
       pkg: pkg
     }))
@@ -93,7 +94,7 @@ gulp.task('copy', function() {
 })
 
 // Default task
-gulp.task('default', ['connect', 'sass', 'minify-css', 'minify-js', 'copy']);
+gulp.task('default', ['connect', 'sass', 'minify-js', 'copy']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {

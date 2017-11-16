@@ -1,0 +1,17 @@
+.test {
+  color: red;
+}
+
+span.tag.label.label-info{
+  color:white;
+  background-color: #17a2b8;
+}
+
+span.twitter-typeahead {
+  color:#ffc107;
+}
+
+.bootstrap-tagsinput{
+	min-width: 200px;
+	text-align: left;
+}
