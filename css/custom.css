@@ -32,6 +32,6 @@ input:focus:-ms-input-placeholder {
   display: none;
   margin-left: -7px; }
 
-.tt-menu:hover {
+.tt-menu .tt-suggestion.tt-selectable:hover {
   background-color: #25a2b7;
   color: white; }
