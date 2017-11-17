@@ -72,7 +72,7 @@ a {
     #mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
       outline: none;
       background-color: transparent; }
-  @media (min-width: 992px) {
+  @media (min-width: 1500px) {
     #mainNav {
       padding-top: 20px;
       padding-bottom: 20px;
