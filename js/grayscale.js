@@ -1,16 +1,15 @@
 (function($) {
   "use strict"; // Start of use strict
 
-  var cats = ['recycle', 'trafficking', 'test'];
+  var tags = ['sustainability', 'sex trafficking', 'recycle', 'homeless shelters', 'world hunger', 'youth'];
 
   //Constructing the suggestion engine
   var categories = new Bloodhound({
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
-    local: $.map(cats, function (cat) {
-        console.log("cat", cat)
+    local: $.map(tags, function (tag) {
         return {
-            name: cat
+            name: tag
         };
       })
   });
@@ -18,7 +17,7 @@
   categories.initialize();
 
   $('.typeahead').on('beforeItemAdd', function(event) {
-    if($.inArray(event.item, cats) === -1) {
+    if($.inArray(event.item, tags) === -1) {
       event.item="";
       event.cancel = true;
     } 

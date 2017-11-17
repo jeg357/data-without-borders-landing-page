@@ -8,12 +8,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Grayscale - Start Bootstrap Theme</title>
+    <title>Data For You And Me</title>
 
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/grayscale.css" rel="stylesheet"  type='text/css'>
+    <link href="css/grayscale.css" rel="stylesheet" type='text/css'>
 
      <link href="css/extra.css" rel="stylesheet"  type='text/css'>
     <!-- Custom fonts for this template -->
@@ -23,14 +23,15 @@
       <!-- Custom styles for this template -->
    
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" rel='stylesheet' type='text/css'>
-
+    <link href="css/custom.css" rel="stylesheet" type='text/css'>
+  
   </head>
 
   <body id="page-top">
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">View Projects</a>
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">View Discussions</a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
           <i class="fa fa-bars"></i>
@@ -41,7 +42,10 @@
               <a class="nav-link js-scroll-trigger" href="#about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#register">Register</a>
+                <a class="nav-link js-scroll-trigger" href="#testimonials">Testimonials</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#visit">Visit</a>
             </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
@@ -101,9 +105,9 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-8 mx-auto">
-              <h1 class="brand-heading">Data Without Borders</h1>
-              <p class="intro-text">A collaborative data platform for nonprofits.
-                <br>Created by Domino DataLab.</p>
+              <h1 class="brand-heading">Data For All</h1>
+              <p class="intro-text">A collaborative data platform for non-profits and data scientists
+                <br>Created by Domino Data Lab.</p>
               <a href="#about" class="btn btn-circle js-scroll-trigger">
                 <i class="fa fa-angle-double-down animated"></i>
               </a>
@@ -117,47 +121,60 @@
     <section id="about" class="content-section text-center">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto">
-            <h2>About Data Without Borders</h2>
-            <p>Data Without Borders is a collaboration tool provided by <a href="https://www.dominodatalab.com/">Domino Data Lab</a> that connects volunteer data scientists from around the world with nonprofits. Our mission is to bring talent together to solve meaningful world problems.  Nonprofits will post their challenges to a discussion board and data scientists will help to figure out what is needed to solve this challenge.  Once the nonprofit views the challenge as capable to be solved, they will graduate the project to start the completion.
-            </p>
+          <div class="col-sm-4 mx-auto">
+            <h2>About Us</h2>
+            <p>Data For You And Me connects volunteer data scientists from around the world with nonprofits. </p>
+            <p>Nonprofits will post their challenges to a discussion board and data scientists will help to figure out what is needed to solve this challenge.  Once the nonprofit views the challenge as capable to be solved, they will graduate the project to start the completion.</p>
+            <a href="#testimonials" class="btn js-scroll-trigger">
+                See what others are saying about us!
+            </a>
+          </div>
+          <div class="col-sm-8 mx-auto">
+              Provided by</br></br></br>
+              <a href="https://www.dominodatalab.com/">
+                <img src="img/domino_inverse.png" alt="Domino Data Labs" width="40%">
+              </a> 
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section id="testimonials" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mx-auto">
+              <h2>Testimonials</h2>
+            <p style="margin-bottom: -0.01em; size:0.5em;">This is like Uber for data scientists</p>
+            <p>- Non Profit</p>
+            <p style="margin-bottom: -0.01em; size:0.5em;">It was always a pain to look for ways to volunteer as a data scientist and you have made the process so much easier!</p>
+            <p>- Sugreev (Thorn)</p>
+            <a href="#register" class="btn js-scroll-trigger"> 
+              Join the conversation!
+            </a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Register Section -->
-    <section id="register" class="register-section content-section text-center">
+    <section id="visit" class="visit-section content-section text-center">
       <div class="container">
         <div class="col-lg-8 mx-auto">
-          <h2>Register to participate in Data Without Borders</h2>
-          <p>Please add your  name,email, create a password, select whether you are a volunteer or a nonprofit, and hit register</p>
-          <div class="input-group margin-bottom-sm">
-            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-            <input class="form-control" type="text" id="name" placeholder="Name">
-          </div>
-          <div class="input-group margin-bottom-sm">
-            <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
-            <input class="form-control" type="text" id="email" placeholder="Email address">
-          </div>
-          <div class="input-group">
-            <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
-            <input class="form-control" type="password" id="password" placeholder="Password">
-          </div>
+          <h4>Please tell us who you are..</h4>
           <div class="dropdown btn-group">
             <button type="button"  class="btn btn-info dropdown-toggle userdropdown btn-lg" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="user_field">
             Choose User
             </button>
             <div class="dropdown-menu">
               <a class="dropdown-item">Non-Profit</a>
-              <a class="dropdown-item">Data Scientist</a>
+              <a class="dropdown-item" onclick="showPrompt()">Data Scientist</a>
             </div>
           </div>
-           
-
-          </p>
           <div style="margin-bottom:30px;">
-              <input id="tagid" class="typeahead" type="text" data-role="tagsinput"/>
+            </br>
+            <h4 id="ds_prompt">Tell us what your interests are and we will tailor the discussion board for you!</h4></br>
+            <input id="tagid" class="typeahead" type="text" placeholder="eg. 'recycle'..." data-role="tagsinput"/>
           </div>
           <a class="btn btn-default btn-lg" id="registerBtn">Go!</a>
           <!--Add in website above-->
@@ -211,7 +228,7 @@
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-    <script src="/js/typeahead.bundle.js"></script>
+    <script src="js/typeahead.bundle.js"></script>
   
 
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
@@ -219,7 +236,16 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
-
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#ds_prompt').hide();
+        $('.bootstrap-tagsinput').hide();
+      })
+      function showPrompt() {
+        $('#ds_prompt').toggle();
+        $('.bootstrap-tagsinput').toggle();
+      }
+    </script>
   </body>
 
 </html>

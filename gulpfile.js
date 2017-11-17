@@ -17,6 +17,33 @@ var banner = ['/*!\n',
   ''
 ].join('');
 
+gulp.task('custom-sass', function() {
+  return gulp.src('scss/custom.scss')
+    .pipe(sass())
+    .pipe(header(banner, {
+      pkg: pkg
+    }))
+    .pipe(gulp.dest('css'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+});
+
+// Minify compiled CSS
+gulp.task('minify-custom-css', ['custom_sass'], function() {
+  return gulp.src('css/custom.css')
+    .pipe(cleanCSS({
+      compatibility: 'ie8'
+    }))
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest('css'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+});
+
 // Compiles SCSS files from /scss into /css
 gulp.task('sass', function() {
   return gulp.src('scss/grayscale.scss')
@@ -94,7 +121,7 @@ gulp.task('copy', function() {
 })
 
 // Default task
-gulp.task('default', ['connect', 'sass', 'minify-js', 'copy']);
+gulp.task('default', ['connect', 'sass', 'custom-sass', 'minify-js', 'copy']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
@@ -114,7 +141,7 @@ gulp.task('connect', function() {
 });
 
 // Dev task with browserSync
-gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
+gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'custom-sass', 'minify-custom-css', 'minify-js'], function() {
   gulp.watch('scss/*.scss', ['sass']);
   gulp.watch('css/*.css', ['minify-css']);
   gulp.watch('js/*.js', ['minify-js']);
